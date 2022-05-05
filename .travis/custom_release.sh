@@ -17,13 +17,7 @@ if [ "${TRAVIS_BRANCH}" = "master" ]; then
     .travis/release.sh "qa-stable"
 fi
 
-if [ "${TRAVIS_BRANCH}" = "prod" ]; then
-    echo "Building for prod-stable"
-    echo
-    echo
-    echo "PUSHING prod-stable"
-    .travis/release.sh "prod-stable"
-
+if [ "${TRAVIS_BRANCH}" = "prod-beta" ]; then
     echo "Rebuilding for prod-beta"
     rm -rf dist/
     BUILD_BETA=true npm run travis:build
